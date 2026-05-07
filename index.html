@@ -284,6 +284,13 @@
     color: #a1a1aa;
   }
 
+  .popup-arr {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 4px;
+  }
+
   .popup-status {
     display: inline-block;
     font-size: 10px;
@@ -367,11 +374,11 @@
       <div class="section-label"><span class="dot dot-green"></span> Completed & Exchanged</div>
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-value green">15</div>
+          <div class="metric-value green">16</div>
           <div class="metric-label">Agencies</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value green">£19.9M</div>
+          <div class="metric-value green">£20.6M</div>
           <div class="metric-label">ARR</div>
         </div>
         <div class="metric-card">
@@ -379,13 +386,13 @@
           <div class="metric-label">Units Under Mgmt</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value green">23%</div>
+          <div class="metric-value green">25%</div>
           <div class="metric-label">Avg Asset EBITDA</div>
         </div>
       </div>
       <div class="hq-label">
         <span class="icon">🏢</span>
-        <span class="hq-text">HQ team of 40+ people</span>
+        <span class="hq-text">HQ team of 40+ (total team size 250+)</span>
       </div>
     </div>
 
@@ -398,7 +405,7 @@
           <div class="metric-label">Agencies</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value blue">£7.8M</div>
+          <div class="metric-value blue">£11.3M</div>
           <div class="metric-label">ARR</div>
         </div>
         <div class="metric-card full">
@@ -413,11 +420,11 @@
       <div class="section-label"><span class="dot dot-purple"></span> Combined Portfolio</div>
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-value purple">22</div>
+          <div class="metric-value purple">23</div>
           <div class="metric-label">Total Agencies</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value purple">£27.7M</div>
+          <div class="metric-value purple">£31.9M</div>
           <div class="metric-label">Total ARR</div>
         </div>
         <div class="metric-card full">
@@ -444,30 +451,32 @@
 <script>
 const agencies = [
   // Completed & Exchanged (green)
-  { name: "Lime Property", location: "Hull", lat: 53.7457, lng: -0.3367, status: "completed" },
-  { name: "Gallant Richardson", location: "Colchester", lat: 51.8959, lng: 0.8919, status: "completed" },
-  { name: "Pennington", location: "Ipswich", lat: 52.0567, lng: 1.1482, status: "completed" },
-  { name: "Parks", location: "Brighton", lat: 50.8225, lng: -0.1372, status: "completed" },
-  { name: "No. 1 Lettings", location: "Pontefract", lat: 53.6912, lng: -1.3126, status: "completed" },
-  { name: "Holden Copley", location: "Nottingham", lat: 52.9548, lng: -1.1581, status: "completed" },
-  { name: "Brookdale", location: "Peterborough", lat: 52.5695, lng: -0.2405, status: "completed" },
-  { name: "SBK Lettings", location: "Midlands", lat: 52.4862, lng: -1.8904, status: "completed" },
-  { name: "Goodwin", location: "Lincolnshire", lat: 53.2307, lng: -0.5406, status: "completed" },
-  { name: "Lime HU17", location: "Hull", lat: 53.7557, lng: -0.3567, status: "completed" },
-  { name: "Albery Tyson", location: "Leicestershire", lat: 52.6369, lng: -1.1398, status: "completed" },
-  { name: "Elliot Oliver Lettings", location: "Cheltenham", lat: 51.8994, lng: -2.0783, status: "completed" },
-  { name: "Move Estates", location: "Cheltenham / Gloucester", lat: 51.8642, lng: -2.2382, status: "completed" },
-  { name: "Eden Harper", location: "Battersea", lat: 51.4761, lng: -0.1684, status: "completed" },
-  { name: "Shaws", location: "Kensington", lat: 51.4990, lng: -0.1939, status: "completed" },
+  { name: "Lime Property", location: "Hull", lat: 53.7457, lng: -0.3367, status: "completed", arr: 1309000 },
+  { name: "Gallant Richardson", location: "Colchester", lat: 51.8959, lng: 0.8919, status: "completed", arr: 782000 },
+  { name: "Pennington", location: "Ipswich", lat: 52.0567, lng: 1.1482, status: "completed", arr: 562000 },
+  { name: "Parks", location: "Brighton", lat: 50.8225, lng: -0.1372, status: "completed", arr: 741000 },
+  { name: "No. 1 Lettings", location: "Pontefract", lat: 53.6912, lng: -1.3126, status: "completed", arr: 718000 },
+  { name: "Holden Copley", location: "Nottingham", lat: 52.9548, lng: -1.1581, status: "completed", arr: 901000 },
+  { name: "Brookdale", location: "Peterborough", lat: 52.5695, lng: -0.2405, status: "completed", arr: 1508000 },
+  { name: "SBK Lettings", location: "Midlands", lat: 52.4862, lng: -1.8904, status: "completed", arr: 6189000 },
+  { name: "Goodwin", location: "Lincolnshire", lat: 53.2307, lng: -0.5406, status: "completed", arr: 812000 },
+  { name: "Lime HU17", location: "Hull", lat: 53.7557, lng: -0.3567, status: "completed", arr: null },
+  { name: "Albery Tyson", location: "Leicestershire", lat: 52.6369, lng: -1.1398, status: "completed", arr: 290000 },
+  { name: "Elliot Oliver Lettings", location: "Cheltenham", lat: 51.8994, lng: -2.0783, status: "completed", arr: 1250000 },
+  { name: "Move Estates", location: "Cheltenham / Gloucester", lat: 51.8642, lng: -2.2382, status: "completed", arr: 2300000 },
+  { name: "Eden Harper", location: "Battersea", lat: 51.4761, lng: -0.1684, status: "completed", arr: 875000 },
+  { name: "AP Morgan", location: "Worcestershire", lat: 52.1936, lng: -2.2216, status: "completed", arr: 725000 },
+
+  { name: "Shaws", location: "Kensington", lat: 51.4990, lng: -0.1939, status: "completed", arr: 1400000 },
 
   // Committed (blue)
-  { name: "Abbot Fox", location: "Norwich", lat: 52.6309, lng: 1.2974, status: "committed" },
-  { name: "Bowerhouse", location: "Bath", lat: 51.3811, lng: -2.3590, status: "committed" },
-  { name: "AP Morgan", location: "Worcestershire", lat: 52.1936, lng: -2.2216, status: "committed" },
-  { name: "Michelle & Co", location: "Bromsgrove", lat: 52.3356, lng: -2.0569, status: "committed" },
-  { name: "Settio", location: "Manchester", lat: 53.4808, lng: -2.2426, status: "committed" },
-  { name: "Symonds & Greenham", location: "Hull", lat: 53.7357, lng: -0.3167, status: "committed" },
-  { name: "Helen Breeze", location: "Kent", lat: 51.2720, lng: 0.5190, status: "committed" },
+  { name: "Abbot Fox", location: "Norwich", lat: 52.6309, lng: 1.2974, status: "committed", arr: 500000 },
+  { name: "Bowerhouse", location: "Bath", lat: 51.3811, lng: -2.3590, status: "committed", arr: 400000 },
+  { name: "Michelle & Co", location: "Bromsgrove", lat: 52.3356, lng: -2.0569, status: "committed", arr: 400000 },
+  { name: "Settio", location: "Manchester", lat: 53.4808, lng: -2.2426, status: "committed", arr: 4700000 },
+  { name: "Symonds & Greenham", location: "Hull", lat: 53.7357, lng: -0.3167, status: "committed", arr: 200000 },
+  { name: "Paramount Lettings", location: "London", lat: 51.5074, lng: -0.1278, status: "committed", arr: 3400000 },
+  { name: "Helen Breeze", location: "Kent", lat: 51.2720, lng: 0.5190, status: "committed", arr: 1600000 },
 ];
 
 // ── Map ──
@@ -500,15 +509,23 @@ function createIcon(type) {
 // Marker references for click-to-fly
 const markers = {};
 
+function formatARR(val) {
+  if (!val) return '—';
+  if (val >= 1000000) return '£' + (val / 1000000).toFixed(1) + 'M';
+  return '£' + (val / 1000).toFixed(0) + 'K';
+}
+
 agencies.forEach((a, i) => {
   const color = a.status === 'completed' ? 'green' : 'blue';
   const statusLabel = a.status === 'completed' ? 'Completed' : 'Committed';
+  const arrLine = a.arr ? `<div class="popup-arr">${formatARR(a.arr)} ARR</div>` : '';
 
   const marker = L.marker([a.lat, a.lng], { icon: createIcon(a.status) })
     .addTo(map)
     .bindPopup(`
       <div class="popup-name">${a.name}</div>
       <div class="popup-location">${a.location}</div>
+      ${arrLine}
       <div class="popup-status ${color}">${statusLabel}</div>
     `, { closeButton: false });
 
@@ -529,10 +546,11 @@ agencies.forEach((a, i) => {
   const color = a.status === 'completed' ? '#22c55e' : '#3b82f6';
   const item = document.createElement('div');
   item.className = 'agency-item';
+  const arrText = a.arr ? formatARR(a.arr) : '';
   item.innerHTML = `
     <div class="agency-dot" style="background:${color}; box-shadow: 0 0 6px ${color}40;"></div>
     <div class="agency-name">${a.name}</div>
-    <div class="agency-location">${a.location}</div>
+    <div class="agency-location">${arrText ? arrText + ' · ' : ''}${a.location}</div>
   `;
   item.addEventListener('click', () => {
     map.flyTo([a.lat, a.lng], 11, { duration: 1.2 });
