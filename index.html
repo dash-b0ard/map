@@ -409,7 +409,7 @@
           <div class="metric-label">ARR</div>
         </div>
         <div class="metric-card full">
-          <div class="metric-value blue">4,100</div>
+          <div class="metric-value blue">4,200</div>
           <div class="metric-label">Units Under Mgmt</div>
         </div>
       </div>
@@ -428,7 +428,7 @@
           <div class="metric-label">Total ARR</div>
         </div>
         <div class="metric-card full">
-          <div class="metric-value purple">17,100</div>
+          <div class="metric-value purple">17,200</div>
           <div class="metric-label">Total Units Under Mgmt</div>
         </div>
       </div>
@@ -477,7 +477,7 @@ const agencies = [
   { name: "Symonds & Greenham", location: "Hull", lat: 53.7357, lng: -0.3167, status: "committed", arr: 200000 },
   { name: "Paramount Lettings", location: "London", lat: 51.5074, lng: -0.1278, status: "committed", arr: 3400000 },
   { name: "Helen Breeze", location: "Kent", lat: 51.2720, lng: 0.5190, status: "committed", arr: 1600000 },
-  { name: "Location Location", location: "London", lat: 51.5200, lng: -0.0980, status: "committed", arr: 1800000 },
+  { name: "Location Location", location: "London", lat: 51.5200, lng: -0.0980, status: "committed", arr: 1800000, units: 212 },
 ];
 
 // ── Map ──
@@ -548,10 +548,12 @@ agencies.forEach((a, i) => {
   const item = document.createElement('div');
   item.className = 'agency-item';
   const arrText = a.arr ? formatARR(a.arr) : '';
+  const unitsText = a.units ? a.units + ' units' : '';
+  const details = [arrText, unitsText, a.location].filter(Boolean).join(' · ');
   item.innerHTML = `
     <div class="agency-dot" style="background:${color}; box-shadow: 0 0 6px ${color}40;"></div>
     <div class="agency-name">${a.name}</div>
-    <div class="agency-location">${arrText ? arrText + ' · ' : ''}${a.location}</div>
+    <div class="agency-location">${details}</div>
   `;
   item.addEventListener('click', () => {
     map.flyTo([a.lat, a.lng], 11, { duration: 1.2 });
